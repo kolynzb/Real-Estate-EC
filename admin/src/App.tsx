@@ -1,21 +1,9 @@
 import { useState } from "react";
-import "./App.css";
+import "./styles/App.css";
 import { CircularProgress } from "@chakra-ui/react";
-
+import { BrowserRouter as Router, Route } from "react-router-dom";
 function App() {
-  const [count, setCount] = useState(0);
-
-  return (
-    <div className="App">
-      <CircularProgress
-        value={30}
-        size="120px"
-        thickness="4px"
-        color="orange.400"
-        isIndeterminate
-      />
-    </div>
-  );
+  return <Router>{/* <Route path="/" element={} /> */}</Router>;
 }
 
 export default App;
