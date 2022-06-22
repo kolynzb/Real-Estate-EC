@@ -21,7 +21,7 @@ export const progressStyles = {
       },
 
       variants: {
-        table: (props) => ({
+        table: (props: any) => ({
           field: {
             bg: "brand.500",
             borderRadius: "16px",

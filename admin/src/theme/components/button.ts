@@ -18,7 +18,7 @@ export const buttonStyles = {
         outline: () => ({
           borderRadius: "16px",
         }),
-        brand: (props) => ({
+        brand: (props: any) => ({
           bg: mode("brand.500", "brand.400")(props),
           color: "white",
           _focus: {
@@ -31,7 +31,7 @@ export const buttonStyles = {
             bg: mode("brand.600", "brand.400")(props),
           },
         }),
-        darkBrand: (props) => ({
+        darkBrand: (props : any) => ({
           bg: mode("brand.900", "brand.400")(props),
           color: "white",
           _focus: {
@@ -44,7 +44,7 @@ export const buttonStyles = {
             bg: mode("brand.800", "brand.400")(props),
           },
         }),
-        lightBrand: (props) => ({
+        lightBrand: (props : any) => ({
           bg: mode("#F2EFFF", "whiteAlpha.100")(props),
           color: mode("brand.500", "white")(props),
           _focus: {
@@ -57,7 +57,7 @@ export const buttonStyles = {
             bg: mode("secondaryGray.400", "whiteAlpha.200")(props),
           },
         }),
-        light: (props) => ({
+        light: (props : any) => ({
           bg: mode("secondaryGray.300", "whiteAlpha.100")(props),
           color: mode("secondaryGray.900", "white")(props),
           _focus: {
@@ -70,7 +70,7 @@ export const buttonStyles = {
             bg: mode("secondaryGray.400", "whiteAlpha.200")(props),
           },
         }),
-        action: (props) => ({
+        action: (props : any) => ({
           fontWeight: "500",
           borderRadius: "50px",
           bg: mode("secondaryGray.300", "brand.400")(props),
@@ -83,7 +83,7 @@ export const buttonStyles = {
             bg: mode("secondaryGray.200", "brand.400")(props),
           },
         }),
-        setup: (props) => ({
+        setup: (props : any) => ({
           fontWeight: "500",
           borderRadius: "50px",
           bg: mode("transparent", "brand.400")(props),
