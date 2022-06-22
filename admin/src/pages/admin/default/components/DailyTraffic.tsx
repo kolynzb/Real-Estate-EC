@@ -2,19 +2,19 @@ import React from "react";
 
 // Chakra imports
 import { Box, Flex, Icon, Text, useColorModeValue } from "@chakra-ui/react";
-import BarChart from "components/charts/BarChart";
+import BarChart from "../../../../components/charts/BarChart";
 
 // Custom components
-import Card from "components/card/Card.js";
+import Card from "../../../../components/card/Card.js";
 import {
   barChartDataDailyTraffic,
   barChartOptionsDailyTraffic,
-} from "variables/charts";
+} from "../../../../variables/charts";
 
 // Assets
 import { RiArrowUpSFill } from "react-icons/ri";
 
-export default function DailyTraffic(props) {
+export default function DailyTraffic(props:any) {
   const { ...rest } = props;
 
   // Chakra Color Mode

@@ -20,12 +20,12 @@ import {
 } from "react-table";
 
 // Custom components
-import Card from "components/card/Card";
-import Menu from "components/menu/MainMenu";
+import Card from "../../../../components/card/Card";
+import Menu from "../../../../components/menu/MainMenu";
 
 // Assets
 import { MdCheckCircle, MdCancel, MdOutlineError } from "react-icons/md";
-export default function ColumnsTable(props) {
+export default function ColumnsTable(props:any) {
   const { columnsData, tableData } = props;
 
   const columns = useMemo(() => columnsData, [columnsData]);
@@ -71,9 +71,9 @@ export default function ColumnsTable(props) {
       </Flex>
       <Table {...getTableProps()} variant='simple' color='gray.500' mb='24px'>
         <Thead>
-          {headerGroups.map((headerGroup, index) => (
+          {headerGroups.map((headerGroup:any, index:any) => (
             <Tr {...headerGroup.getHeaderGroupProps()} key={index}>
-              {headerGroup.headers.map((column, index) => (
+              {headerGroup.headers.map((column:any, index:any) => (
                 <Th
                   {...column.getHeaderProps(column.getSortByToggleProps())}
                   pe='10px'
@@ -92,12 +92,12 @@ export default function ColumnsTable(props) {
           ))}
         </Thead>
         <Tbody {...getTableBodyProps()}>
-          {page.map((row, index) => {
+          {page.map((row:any, index:React.Key) => {
             prepareRow(row);
             return (
               <Tr {...row.getRowProps()} key={index}>
-                {row.cells.map((cell, index) => {
-                  let data = "";
+                {row.cells.map((cell:any, index:React.Key) => {
+                  let data:any = "";
                   if (cell.column.Header === "NAME") {
                     data = (
                       <Text color={textColor} fontSize='sm' fontWeight='700'>
@@ -118,7 +118,7 @@ export default function ColumnsTable(props) {
                               ? "red.500"
                               : cell.value === "Error"
                               ? "orange.500"
-                              : null
+                              : undefined
                           }
                           as={
                             cell.value === "Approved"
@@ -127,7 +127,7 @@ export default function ColumnsTable(props) {
                               ? MdCancel
                               : cell.value === "Error"
                               ? MdOutlineError
-                              : null
+                              : undefined
                           }
                         />
                         <Text color={textColor} fontSize='sm' fontWeight='700'>
