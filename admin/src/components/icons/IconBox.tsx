@@ -1,7 +1,7 @@
 import React from "react";
 import { Flex } from "@chakra-ui/react";
 
-export default function IconBox(props) {
+export default function IconBox(props: { [x: string]: any; icon: any; }) {
   const { icon, ...rest } = props;
 
   return (

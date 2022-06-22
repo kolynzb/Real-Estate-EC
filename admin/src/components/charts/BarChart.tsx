@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Chart from "react-apexcharts";
 
 class ColumnChart extends Component {
-  constructor(props) {
+  constructor(props:any) {
     super(props);
     this.state = {
       chartData: [],

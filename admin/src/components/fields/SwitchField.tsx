@@ -10,7 +10,7 @@ import {
 // Custom components
 import React from "react";
 
-export default function Default(props) {
+export default function Default(props: { [x: string]: any; id: any; label: any; isChecked: any; onChange: any; desc: any; textWidth: any; reversed: any; fontSize: any; }) {
   const {
     id,
     label,
