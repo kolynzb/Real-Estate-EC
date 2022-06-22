@@ -21,7 +21,7 @@ import {
   useTable,
 } from "react-table";
 
-function TopCreatorTable(props) {
+function TopCreatorTable(props: any) {
   const { columnsData, tableData } = props;
 
   const columns = useMemo(() => columnsData, [columnsData]);
@@ -46,37 +46,41 @@ function TopCreatorTable(props) {
   return (
     <>
       <Flex
-        direction='column'
-        w='100%'
-        overflowX={{ sm: "scroll", lg: "hidden" }}>
+        direction="column"
+        w="100%"
+        overflowX={{ sm: "scroll", lg: "hidden" }}
+      >
         <Flex
           align={{ sm: "flex-start", lg: "center" }}
-          justify='space-between'
-          w='100%'
-          px='22px'
-          pb='20px'
-          mb='10px'
-          boxShadow='0px 40px 58px -20px rgba(112, 144, 176, 0.26)'>
-          <Text color={textColor} fontSize='xl' fontWeight='600'>
+          justify="space-between"
+          w="100%"
+          px="22px"
+          pb="20px"
+          mb="10px"
+          boxShadow="0px 40px 58px -20px rgba(112, 144, 176, 0.26)"
+        >
+          <Text color={textColor} fontSize="xl" fontWeight="600">
             Top Creators
           </Text>
-          <Button variant='action'>See all</Button>
+          <Button variant="action">See all</Button>
         </Flex>
-        <Table {...getTableProps()} variant='simple' color='gray.500'>
+        <Table {...getTableProps()} variant="simple" color="gray.500">
           <Thead>
-            {headerGroups.map((headerGroup, index) => (
+            {headerGroups.map((headerGroup: any, index: any) => (
               <Tr {...headerGroup.getHeaderGroupProps()} key={index}>
-                {headerGroup.headers.map((column, index) => (
+                {headerGroup.headers.map((column: any, index: any) => (
                   <Th
                     {...column.getHeaderProps(column.getSortByToggleProps())}
-                    pe='10px'
+                    pe="10px"
                     key={index}
-                    borderColor='transparent'>
+                    borderColor="transparent"
+                  >
                     <Flex
-                      justify='space-between'
-                      align='center'
+                      justify="space-between"
+                      align="center"
                       fontSize={{ sm: "10px", lg: "12px" }}
-                      color='gray.400'>
+                      color="gray.400"
+                    >
                       {column.render("Header")}
                     </Flex>
                   </Th>
@@ -86,25 +90,26 @@ function TopCreatorTable(props) {
           </Thead>
 
           <Tbody {...getTableBodyProps()}>
-            {page.map((row, index) => {
+            {page.map((row: any, index: any) => {
               prepareRow(row);
               return (
                 <Tr {...row.getRowProps()} key={index}>
-                  {row.cells.map((cell, index) => {
-                    let data = "";
+                  {row.cells.map((cell: any, index: any) => {
+                    let data: any = "";
                     if (cell.column.Header === "Name") {
                       data = (
-                        <Flex align='center'>
+                        <Flex align="center">
                           <Avatar
                             src={cell.value[1]}
-                            w='30px'
-                            h='30px'
-                            me='8px'
+                            w="30px"
+                            h="30px"
+                            me="8px"
                           />
                           <Text
                             color={textColor}
-                            fontSize='sm'
-                            fontWeight='600'>
+                            fontSize="sm"
+                            fontWeight="600"
+                          >
                             {cell.value[0]}
                           </Text>
                         </Flex>
@@ -113,8 +118,9 @@ function TopCreatorTable(props) {
                       data = (
                         <Text
                           color={textColorSecondary}
-                          fontSize='sm'
-                          fontWeight='500'>
+                          fontSize="sm"
+                          fontWeight="500"
+                        >
                           {cell.value}
                         </Text>
                       );
@@ -122,8 +128,8 @@ function TopCreatorTable(props) {
                       data = (
                         <Box>
                           <Progress
-                            variant='table'
-                            colorScheme='brandScheme'
+                            variant="table"
+                            colorScheme="brandScheme"
                             value={cell.value}
                           />
                         </Box>
@@ -135,7 +141,8 @@ function TopCreatorTable(props) {
                         key={index}
                         fontSize={{ sm: "14px" }}
                         minW={{ sm: "150px", md: "200px", lg: "auto" }}
-                        borderColor='transparent'>
+                        borderColor="transparent"
+                      >
                         {data}
                       </Td>
                     );
