@@ -1,16 +1,14 @@
-
 import { Box, Grid } from "@chakra-ui/react";
-import Banner from "views/admin/profile/components/Banner";
-import General from "views/admin/profile/components/General";
-import Notifications from "views/admin/profile/components/Notifications";
-import Projects from "views/admin/profile/components/Projects";
-import Storage from "views/admin/profile/components/Storage";
-import Upload from "views/admin/profile/components/Upload";
+import Banner from "../../../pages/admin/profile/components/Banner";
+import General from "../../../pages/admin/profile/components/General";
+import Notifications from "../../../pages/admin/profile/components/Notifications";
+import Projects from "../../../pages/admin/profile/components/Projects";
+import Storage from "../../../pages/admin/profile/components/Storage";
+import Upload from "../../../pages/admin/profile/components/Upload";
 
 // Assets
-import banner from "assets/img/auth/banner.png";
-import avatar from "assets/img/avatars/avatar4.png";
-import React from "react";
+import banner from "../../../assets/img/auth/banner.png";
+import avatar from "../../../assets/img/avatars/avatar4.png";
 
 export default function Overview() {
   return (
@@ -25,16 +23,17 @@ export default function Overview() {
           base: "repeat(3, 1fr)",
           lg: "1fr",
         }}
-        gap={{ base: "20px", xl: "20px" }}>
+        gap={{ base: "20px", xl: "20px" }}
+      >
         <Banner
-          gridArea='1 / 1 / 2 / 2'
+          gridArea="1 / 1 / 2 / 2"
           banner={banner}
           avatar={avatar}
-          name='Adela Parkson'
-          job='Product Designer'
-          posts='17'
-          followers='9.7k'
-          following='274'
+          name="Adela Parkson"
+          job="Product Designer"
+          posts="17"
+          followers="9.7k"
+          following="274"
         />
         <Storage
           gridArea={{ base: "2 / 1 / 3 / 2", lg: "1 / 2 / 2 / 3" }}
@@ -47,12 +46,12 @@ export default function Overview() {
             lg: "1 / 3 / 2 / 4",
           }}
           minH={{ base: "auto", lg: "420px", "2xl": "365px" }}
-          pe='20px'
+          pe="20px"
           pb={{ base: "100px", lg: "20px" }}
         />
       </Grid>
       <Grid
-        mb='20px'
+        mb="20px"
         templateColumns={{
           base: "1fr",
           lg: "repeat(2, 1fr)",
@@ -63,21 +62,22 @@ export default function Overview() {
           lg: "repeat(2, 1fr)",
           "2xl": "1fr",
         }}
-        gap={{ base: "20px", xl: "20px" }}>
+        gap={{ base: "20px", xl: "20px" }}
+      >
         <Projects
-          gridArea='1 / 2 / 2 / 2'
+          gridArea="1 / 2 / 2 / 2"
           banner={banner}
           avatar={avatar}
-          name='Adela Parkson'
-          job='Product Designer'
-          posts='17'
-          followers='9.7k'
-          following='274'
+          name="Adela Parkson"
+          job="Product Designer"
+          posts="17"
+          followers="9.7k"
+          following="274"
         />
         <General
           gridArea={{ base: "2 / 1 / 3 / 2", lg: "1 / 2 / 2 / 3" }}
-          minH='365px'
-          pe='20px'
+          minH="365px"
+          pe="20px"
         />
         <Notifications
           used={25.6}
