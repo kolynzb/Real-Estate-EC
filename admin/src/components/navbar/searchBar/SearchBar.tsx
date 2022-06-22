@@ -7,7 +7,7 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import { SearchIcon } from "@chakra-ui/icons";
-export function SearchBar(props) {
+export function SearchBar(props:any) {
   // Pass the computed styles into the `__css` prop
   const { variant, background, children, placeholder, borderRadius, ...rest } =
     props;
@@ -22,7 +22,7 @@ export function SearchBar(props) {
           <IconButton
             bg='inherit'
             borderRadius='inherit'
-            _hover='none'
+
             _active={{
               bg: "inherit",
               transform: "none",
@@ -31,9 +31,7 @@ export function SearchBar(props) {
             _focus={{
               boxShadow: "none",
             }}
-            icon={
-              <SearchIcon color={searchIconColor} w='15px' h='15px' />
-            }></IconButton>
+            icon={<SearchIcon color={searchIconColor} w='15px' h='15px' />} aria-label={""}></IconButton>
         }
       />
       <Input

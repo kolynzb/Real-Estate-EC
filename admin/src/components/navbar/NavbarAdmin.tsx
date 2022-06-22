@@ -11,9 +11,9 @@ import {
 } from "@chakra-ui/react";
 import PropTypes from "prop-types";
 import React, { useState, useEffect } from "react";
-import AdminNavbarLinks from "components/navbar/NavbarLinksAdmin";
+import AdminNavbarLinks from "../../components/navbar/NavbarLinksAdmin";
 
-export default function AdminNavbar(props) {
+export default function AdminNavbar(props: any) {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {

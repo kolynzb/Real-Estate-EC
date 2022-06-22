@@ -21,7 +21,7 @@ import {
   MdOutlineSettings,
 } from "react-icons/md";
 
-export default function Banner(props) {
+export default function Banner(props:any) {
   const { ...rest } = props;
 
   const textColor = useColorModeValue("secondaryGray.500", "white");
