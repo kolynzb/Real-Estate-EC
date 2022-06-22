@@ -9,11 +9,11 @@ import {
   Text,
 } from "@chakra-ui/react";
 // Custom components
-import Card from "components/card/Card.js";
+import Card from "../../components/card/Card.js";
 // Custom icons
 import React from "react";
 
-export default function Default(props) {
+export default function Default(props:any) {
   const { startContent, endContent, name, growth, value } = props;
   const textColor = useColorModeValue("secondaryGray.900", "white");
   const textColorSecondary = "secondaryGray.600";
