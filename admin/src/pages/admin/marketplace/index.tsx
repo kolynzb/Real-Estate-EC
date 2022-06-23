@@ -69,7 +69,7 @@ export default function Marketplace() {
                   color={textColorBrand}
                   fontWeight="500"
                   me={{ base: "34px", md: "44px" }}
-                  to="#art"
+                  href="#art"
                 >
                   Art
                 </Link>
@@ -77,7 +77,7 @@ export default function Marketplace() {
                   color={textColorBrand}
                   fontWeight="500"
                   me={{ base: "34px", md: "44px" }}
-                  to="#music"
+                  href="#music"
                 >
                   Music
                 </Link>
@@ -85,11 +85,11 @@ export default function Marketplace() {
                   color={textColorBrand}
                   fontWeight="500"
                   me={{ base: "34px", md: "44px" }}
-                  to="#collectibles"
+                  href="#collectibles"
                 >
                   Collectibles
                 </Link>
-                <Link color={textColorBrand} fontWeight="500" to="#sports">
+                <Link color={textColorBrand} fontWeight="500" href="#sports">
                   Sports
                 </Link>
               </Flex>

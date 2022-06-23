@@ -75,7 +75,7 @@ export default function ColumnsTable(props: any) {
         <Thead>
           {headerGroups.map((headerGroup, index) => (
             <Tr {...headerGroup.getHeaderGroupProps()} key={index}>
-              {headerGroup.headers.map((column, index) => (
+              {headerGroup.headers.map((column: any, index: any) => (
                 <Th
                   {...column.getHeaderProps(column.getSortByToggleProps())}
                   pe="10px"

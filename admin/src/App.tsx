@@ -17,7 +17,6 @@ function App() {
         <Route path={`/admin`} element={<AdminLayout />} />
         <Route path={`/rtl`} element={<RTLLayout />} />
         <Route path="/" element={<Navigate replace to="/admin" />} />
-        {/* <Redirect from='/' to='/admin' /> */}
       </Routes>
     </Router>
   );
