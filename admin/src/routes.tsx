@@ -4,7 +4,7 @@ import { Icon } from "@chakra-ui/react";
 import {
   MdBarChart,
   MdPerson,
-  MdHome,  
+  MdHome,
   MdLock,
   MdOutlineShoppingCart,
 } from "react-icons/md";
@@ -25,7 +25,7 @@ const routes = [
     layout: "/admin",
     path: "/default",
     icon: <Icon as={MdHome} width="20px" height="20px" color="inherit" />,
-    component: MainDashboard,
+    component: <MainDashboard />,
   },
   {
     name: "NFT Marketplace",
@@ -39,7 +39,7 @@ const routes = [
         color="inherit"
       />
     ),
-    component: NFTMarketplace,
+    component: <NFTMarketplace />,
     secondary: true,
   },
   {
@@ -61,14 +61,14 @@ const routes = [
     layout: "/auth",
     path: "/sign-in",
     icon: <Icon as={MdLock} width="20px" height="20px" color="inherit" />,
-    component: SignInCentered,
+    component: <SignInCentered />,
   },
   {
     name: "RTL Admin",
     layout: "/rtl",
     path: "/rtl-default",
     icon: <Icon as={MdHome} width="20px" height="20px" color="inherit" />,
-    component: RTL,
+    component: <RTL />,
   },
 ];
 

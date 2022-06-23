@@ -57,7 +57,8 @@ export default function Banner(props: any) {
           </Text>
         </Flex>
         <Progress
-          align="start"
+          // align="start"
+          alignItems="start"
           colorScheme="brandScheme"
           value={(used / total) * 100}
           w="100%"

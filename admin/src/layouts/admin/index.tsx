@@ -6,7 +6,7 @@ import Navbar from "../../components/navbar/NavbarAdmin.js";
 import Sidebar from "../../components/sidebar/Sidebar.js";
 import { SidebarContext } from "../../contexts/SidebarContext";
 import React, { useState } from "react";
-import { Navigate, Route } from "react-router-dom";
+import { Navigate, Outlet, Route, Routes } from "react-router-dom";
 import routes from "../../routes";
 
 // Custom Chakra theme
@@ -19,6 +19,7 @@ export default function Dashboard(props: any) {
   const getRoute = () => {
     return window.location.pathname !== "/admin/full-screen-maps";
   };
+
   const getActiveRoute = (routes: any) => {
     let activeRoute = "Default Brand Text";
     for (let i = 0; i < routes.length; i++) {
@@ -65,7 +66,7 @@ export default function Dashboard(props: any) {
     }
     return activeNavbar;
   };
-  const getActiveNavbarText = (routes: string | any[]) => {
+  const getActiveNavbarText = (routes: any) => {
     let activeNavbar = false;
     for (let i = 0; i < routes.length; i++) {
       if (routes[i].collapse) {
@@ -88,13 +89,15 @@ export default function Dashboard(props: any) {
     }
     return activeNavbar;
   };
+
   const getRoutes = (routes: any) => {
     return routes.map((prop: any, key: React.Key) => {
       if (prop.layout === "/admin") {
+        console.log(prop.layout + prop.path);
         return (
           <Route
             path={prop.layout + prop.path}
-            element={<prop.component />}
+            element={prop.component}
             key={key}
           />
         );
@@ -106,6 +109,7 @@ export default function Dashboard(props: any) {
         return getRoutes(prop.items);
       } else {
         return null;
+        // return <>hello</>;
       }
     });
   };
@@ -156,11 +160,16 @@ export default function Dashboard(props: any) {
               minH="100vh"
               pt="50px"
             >
-              {getRoutes(routes)}
-              <Route
-                path="/"
-                element={<Navigate to="/admin/default" replace />}
-              />
+              <Routes>
+                {getRoutes(routes)}
+
+                <Route
+                  path="/"
+                  element={<Navigate to="/admin/default" replace />}
+                />
+              </Routes>
+
+              <Outlet />
             </Box>
           ) : null}
           <Box>
