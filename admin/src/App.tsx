@@ -1,4 +1,3 @@
-import { useState } from "react";
 import "./styles/App.css";
 import AuthLayout from "./layouts/auth";
 import AdminLayout from "./layouts/admin";

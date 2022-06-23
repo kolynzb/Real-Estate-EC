@@ -57,14 +57,14 @@ export default function AuthNavbar(props: any) {
   } = useDisclosure();
   // Menus
   function getLinks(routeName: any) {
-    let foundRoute: any = routes.filter(function (route) {
+    let foundRoute: any = routes.filter(function (route: any) {
       return route.items && route.name === routeName;
     });
     console.log(foundRoute);
     return foundRoute[0].items;
   }
   function getLinksCollapse(routeName: any) {
-    let foundRoute = routes.filter(function (route) {
+    let foundRoute: any = routes.filter(function (route: any) {
       return route.items && route.name === routeName;
     });
 

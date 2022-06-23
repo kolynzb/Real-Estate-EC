@@ -2,12 +2,12 @@ import React, { Component } from "react";
 import Chart from "react-apexcharts";
 
 type Props = {
-  chartData: [];
-  chartOptions: {};
+  chartData: any;
+  chartOptions: any;
 };
 type State = {
-  chartData: [];
-  chartOptions: {};
+  chartData: any;
+  chartOptions: any;
 };
 class ColumnChart extends Component<Props, State> {
   constructor(props: any) {

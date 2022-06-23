@@ -58,8 +58,8 @@ export default function AuthNavbar(props: any) {
   } = useDisclosure();
 
   // Menus
-  let authObject = {};
-  routes.map((route) => {
+  let authObject: any = {};
+  routes.map((route: any) => {
     if (route.items) {
       authObject = route.items.find(
         (link: any) => link.name === "Authentication"
@@ -67,8 +67,8 @@ export default function AuthNavbar(props: any) {
     }
   });
 
-  let applicationsObject = {};
-  routes.map((route) => {
+  let applicationsObject: any = {};
+  routes.map((route: any) => {
     if (route.items) {
       applicationsObject = route.items.find(
         (link: any) => link.name === "Applications"
@@ -76,7 +76,7 @@ export default function AuthNavbar(props: any) {
     }
   });
 
-  let ecommerceObject = {};
+  let ecommerceObject: any = {};
   routes.map((route: any) => {
     if (route.items) {
       ecommerceObject = route.items.find(
@@ -179,9 +179,14 @@ export default function AuthNavbar(props: any) {
               mb="6px"
               cursor="default"
             >
-              <IconBox bg="blue.500" color="white" h="30px" w="30px">
-                <RocketIcon color="inherit" />
-              </IconBox>
+              <IconBox
+                bg="blue.500"
+                color="white"
+                h="30px"
+                w="30px"
+                icon={<RocketIcon color="inherit" />}
+              />
+
               <Text fontWeight="bold" fontSize="sm" color={textColor}>
                 Extra
               </Text>
@@ -200,9 +205,14 @@ export default function AuthNavbar(props: any) {
               mb="6px"
               cursor="default"
             >
-              <IconBox bg="blue.500" color="white" h="30px" w="30px">
-                {link.authIcon}
-              </IconBox>
+              <IconBox
+                bg="blue.500"
+                color="white"
+                h="30px"
+                w="30px"
+                icon={link.authIcon}
+              />
+
               <Text fontWeight="bold" fontSize="sm" color={textColor}>
                 {link.name}
               </Text>
@@ -297,9 +307,14 @@ export default function AuthNavbar(props: any) {
       return (
         <NavLink to={link.layout + link.path}>
           <Stack direction="row" spacing="12px" align="center" cursor="pointer">
-            <IconBox bg="blue.500" color="white" h="30px" w="30px">
-              {link.authIcon}
-            </IconBox>
+            <IconBox
+              bg="blue.500"
+              color="white"
+              h="30px"
+              w="30px"
+              icon={link.authIcon}
+            />
+
             <Text fontWeight="bold" fontSize="sm" color={textColor}>
               {link.name}
             </Text>
@@ -321,9 +336,14 @@ export default function AuthNavbar(props: any) {
               mb="6px"
               cursor="default"
             >
-              <IconBox bg="blue.500" color="white" h="30px" w="30px">
-                {link.authIcon}
-              </IconBox>
+              <IconBox
+                bg="blue.500"
+                color="white"
+                h="30px"
+                w="30px"
+                icon={link.authIcon}
+              />
+
               <Text fontWeight="bold" fontSize="sm" color={textColor}>
                 {link.name}
               </Text>
@@ -442,9 +462,10 @@ export default function AuthNavbar(props: any) {
                   h="50px"
                   w="50px"
                   mb="12px"
-                >
-                  <Icon as={AiFillStar} w="25px" h="25px" color="blue.500" />
-                </IconBox>
+                  icon={
+                    <Icon as={AiFillStar} w="25px" h="25px" color="blue.500" />
+                  }
+                />
                 <Text
                   fontSize="xl"
                   fontWeight="bold"
@@ -543,7 +564,8 @@ export default function AuthNavbar(props: any) {
   return (
     <SidebarContext.Provider value={{ sidebarWidth }}>
       <Flex
-        position={navbarPosition}
+        bgPosition={navbarPosition}
+        // position={navbarPosition}
         top="16px"
         left="50%"
         transform="translate(-50%, 0px)"

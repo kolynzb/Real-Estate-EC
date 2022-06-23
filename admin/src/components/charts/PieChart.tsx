@@ -2,14 +2,14 @@ import React from "react";
 import ReactApexChart from "react-apexcharts";
 
 type Props = {
-  chartData: [];
-  chartOptions: {};
+  chartData: any;
+  chartOptions: any;
 };
 type State = {
-  chartData: [];
-  chartOptions: {};
+  chartData: any;
+  chartOptions: any;
 };
-class PieChart extends React.Component<Props, State> {
+class PieChart extends React.Component<any, any> {
   constructor(props: any) {
     super(props);
 

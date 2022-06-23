@@ -7,11 +7,11 @@ import Sidebar from "../../components/sidebar/Sidebar.js";
 import { RtlProvider } from "../../components/rtlProvider/RtlProvider.js";
 import { SidebarContext } from "../../contexts/SidebarContext";
 import React, { useState } from "react";
-import { Redirect, Route, Switch } from "react-router-dom";
+import { Navigate, Route } from "react-router-dom";
 import routes from "../../routes";
 
 // Custom Chakra theme
-export default function Dashboard(props:any) {
+export default function Dashboard(props: any) {
   const { ...rest } = props;
   // states and functions
   const [fixed] = useState(false);
@@ -20,16 +20,16 @@ export default function Dashboard(props:any) {
   const getRoute = () => {
     return window.location.pathname !== "/rtl/full-screen-maps";
   };
-  const getActiveRoute = (routes:any) => {
+  const getActiveRoute = (routes: any) => {
     let activeRoute = "Default Brand Text";
     for (let i = 0; i < routes.length; i++) {
       if (routes[i].collapse) {
-        let collapseActiveRoute:any = getActiveRoute(routes[i].items);
+        let collapseActiveRoute: any = getActiveRoute(routes[i].items);
         if (collapseActiveRoute !== activeRoute) {
           return collapseActiveRoute;
         }
       } else if (routes[i].category) {
-        let categoryActiveRoute:any = getActiveRoute(routes[i].items);
+        let categoryActiveRoute: any = getActiveRoute(routes[i].items);
         if (categoryActiveRoute !== activeRoute) {
           return categoryActiveRoute;
         }
@@ -43,7 +43,7 @@ export default function Dashboard(props:any) {
     }
     return activeRoute;
   };
-  const getActiveNavbar:any = (routes:any) => {
+  const getActiveNavbar: any = (routes: any) => {
     let activeNavbar = false;
     for (let i = 0; i < routes.length; i++) {
       if (routes[i].collapse) {
@@ -66,7 +66,7 @@ export default function Dashboard(props:any) {
     }
     return activeNavbar;
   };
-  const getActiveNavbarText:any = (routes:any) => {
+  const getActiveNavbarText: any = (routes: any) => {
     let activeNavbar = false;
     for (let i = 0; i < routes.length; i++) {
       if (routes[i].collapse) {
@@ -89,8 +89,8 @@ export default function Dashboard(props:any) {
     }
     return activeNavbar;
   };
-  const getRoutes = (routes:any) => {
-    return routes.map((prop:any, key:any) => {
+  const getRoutes = (routes: any) => {
+    return routes.map((prop: any, key: any) => {
       if (prop.layout === "/rtl") {
         return (
           <Route
@@ -118,21 +118,23 @@ export default function Dashboard(props:any) {
         value={{
           toggleSidebar,
           setToggleSidebar,
-        }}>
-        <Sidebar routes={routes} display='none' {...rest} />
+        }}
+      >
+        <Sidebar routes={routes} display="none" {...rest} />
         <Box
-          float='left'
-          minHeight='100vh'
-          height='100%'
-          overflow='auto'
-          position='relative'
-          maxHeight='100%'
+          float="left"
+          minHeight="100vh"
+          height="100%"
+          overflow="auto"
+          position="relative"
+          maxHeight="100%"
           w={{ base: "100%", xl: "calc( 100% - 290px )" }}
           maxWidth={{ base: "100%", xl: "calc( 100% - 290px )" }}
-          transition='all 0.33s cubic-bezier(0.685, 0.0473, 0.346, 1)'
-          transitionDuration='.2s, .2s, .35s'
-          transitionProperty='top, bottom, width'
-          transitionTimingFunction='linear, linear, ease'>
+          transition="all 0.33s cubic-bezier(0.685, 0.0473, 0.346, 1)"
+          transitionDuration=".2s, .2s, .35s"
+          transitionProperty="top, bottom, width"
+          transitionTimingFunction="linear, linear, ease"
+        >
           <Portal>
             <Box>
               <Navbar
@@ -149,15 +151,17 @@ export default function Dashboard(props:any) {
 
           {getRoute() ? (
             <Box
-              mx='auto'
+              mx="auto"
               p={{ base: "20px", md: "30px" }}
-              pe='20px'
-              minH='100vh'
-              pt='50px'>
-              <Switch>
-                {getRoutes(routes)}
-                <Redirect from='/' to='/rtl/rtl-default' />
-              </Switch>
+              pe="20px"
+              minH="100vh"
+              pt="50px"
+            >
+              {getRoutes(routes)}
+              <Route
+                path="/"
+                element={<Navigate to="/rtl/rtl-default" replace />}
+              />
             </Box>
           ) : null}
           <Box>

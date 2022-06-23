@@ -79,7 +79,7 @@ export const globalStyles = {
     },
   },
   styles: {
-    global: (props) => ({
+    global: (props: any) => ({
       body: {
         overflowX: "hidden",
         bg: mode("secondaryGray.300", "navy.900")(props),

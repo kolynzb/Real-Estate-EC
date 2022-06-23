@@ -9,7 +9,7 @@ type State = {
   chartData: [];
   chartOptions: {};
 };
-class LineChart extends React.Component<Props, State> {
+class LineChart extends React.Component<any, any> {
   constructor(props: any) {
     super(props);
 
