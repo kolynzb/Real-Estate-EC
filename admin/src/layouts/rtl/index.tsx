@@ -1,17 +1,17 @@
 // Chakra imports
 import { Portal, Box, useDisclosure } from "@chakra-ui/react";
-import Footer from "components/footer/FooterAdmin.js";
+import Footer from "../../components/footer/FooterAdmin.js";
 // Layout components
-import Navbar from "components/navbar/NavbarRTL.js";
-import Sidebar from "components/sidebar/Sidebar.js";
-import { RtlProvider } from "components/rtlProvider/RtlProvider.js";
-import { SidebarContext } from "contexts/SidebarContext";
+import Navbar from "../../components/navbar/NavbarRTL.js";
+import Sidebar from "../../components/sidebar/Sidebar.js";
+import { RtlProvider } from "../../components/rtlProvider/RtlProvider.js";
+import { SidebarContext } from "../../contexts/SidebarContext";
 import React, { useState } from "react";
 import { Redirect, Route, Switch } from "react-router-dom";
-import routes from "routes.js";
+import routes from "../../routes";
 
 // Custom Chakra theme
-export default function Dashboard(props) {
+export default function Dashboard(props:any) {
   const { ...rest } = props;
   // states and functions
   const [fixed] = useState(false);
@@ -20,16 +20,16 @@ export default function Dashboard(props) {
   const getRoute = () => {
     return window.location.pathname !== "/rtl/full-screen-maps";
   };
-  const getActiveRoute = (routes) => {
+  const getActiveRoute = (routes:any) => {
     let activeRoute = "Default Brand Text";
     for (let i = 0; i < routes.length; i++) {
       if (routes[i].collapse) {
-        let collapseActiveRoute = getActiveRoute(routes[i].items);
+        let collapseActiveRoute:any = getActiveRoute(routes[i].items);
         if (collapseActiveRoute !== activeRoute) {
           return collapseActiveRoute;
         }
       } else if (routes[i].category) {
-        let categoryActiveRoute = getActiveRoute(routes[i].items);
+        let categoryActiveRoute:any = getActiveRoute(routes[i].items);
         if (categoryActiveRoute !== activeRoute) {
           return categoryActiveRoute;
         }
@@ -43,7 +43,7 @@ export default function Dashboard(props) {
     }
     return activeRoute;
   };
-  const getActiveNavbar = (routes) => {
+  const getActiveNavbar:any = (routes:any) => {
     let activeNavbar = false;
     for (let i = 0; i < routes.length; i++) {
       if (routes[i].collapse) {
@@ -66,7 +66,7 @@ export default function Dashboard(props) {
     }
     return activeNavbar;
   };
-  const getActiveNavbarText = (routes) => {
+  const getActiveNavbarText:any = (routes:any) => {
     let activeNavbar = false;
     for (let i = 0; i < routes.length; i++) {
       if (routes[i].collapse) {
@@ -89,13 +89,13 @@ export default function Dashboard(props) {
     }
     return activeNavbar;
   };
-  const getRoutes = (routes) => {
-    return routes.map((prop, key) => {
+  const getRoutes = (routes:any) => {
+    return routes.map((prop:any, key:any) => {
       if (prop.layout === "/rtl") {
         return (
           <Route
             path={prop.layout + prop.path}
-            component={prop.component}
+            element={<prop.component />}
             key={key}
           />
         );

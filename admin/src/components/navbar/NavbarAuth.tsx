@@ -178,7 +178,13 @@ export default function AuthNavbar(props: any) {
               align="center"
               cursor="default"
             >
-              <IconBox bg="brand.500" h="30px" w="30px" me="10px">
+              <IconBox
+                bg="brand.500"
+                h="30px"
+                w="30px"
+                me="10px"
+                icon={undefined}
+              >
                 {link.icon}
               </IconBox>
               <Text fontWeight="bold" fontSize="md" me="auto" color={textColor}>
@@ -213,7 +219,7 @@ export default function AuthNavbar(props: any) {
     });
   };
   const createAuthLinks = (routes: any) => {
-    return routes.map((link:any, key:any) => {
+    return routes.map((link: any, key: any) => {
       if (link.collapse === true) {
         return (
           <Stack key={key} direction="column" my="auto" maxW="max-content">
@@ -224,9 +230,14 @@ export default function AuthNavbar(props: any) {
               cursor="default"
               w="max-content"
             >
-              <IconBox bg="brand.500" h="30px" w="30px" me="10px">
-                {link.icon}
-              </IconBox>
+              <IconBox
+                bg="brand.500"
+                h="30px"
+                w="30px"
+                me="10px"
+                icon={link.icon}
+              />
+
               <Text fontWeight="bold" fontSize="md" me="auto" color={textColor}>
                 {link.name}
               </Text>
@@ -335,7 +346,8 @@ export default function AuthNavbar(props: any) {
             left="-10px"
           >
             <Flex>
-              <SimpleGrid columns="3" gap="10px" minW="500px" me="20px">
+              {/* columns="3" */}
+              <SimpleGrid column="3" gap="10px" minW="500px" me="20px">
                 {createAuthLinks(authObject)}
               </SimpleGrid>
               {/* <Flex
@@ -455,7 +467,8 @@ export default function AuthNavbar(props: any) {
   return (
     <SidebarContext.Provider value={{ sidebarWidth }}>
       <Flex
-        position={navbarPosition}
+        bgPosition={navbarPosition}
+        // position={navbarPosition}
         top="16px"
         left="50%"
         transform="translate(-50%, 0px)"

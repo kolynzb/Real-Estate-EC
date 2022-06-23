@@ -12,6 +12,7 @@
     "@chakra-ui/react": "^2.2.1",
     "@emotion/react": "^11",
     "@emotion/styled": "^11",
+    "apexcharts": "^3.35.3",
     "framer-motion": "^6",
     "react": "^18.0.0",
     "react-apexcharts": "^1.4.0",
@@ -19,10 +20,14 @@
     "react-custom-scrollbars-2": "^4.5.0",
     "react-dom": "^18.0.0",
     "react-icons": "^4.4.0",
+    "react-is": "^18.2.0",
     "react-router-dom": "^6.3.0",
-    "react-table": "^7.8.0"
+    "react-table": "^7.8.0",
+    "stylis": "^4.1.1",
+    "stylis-plugin-rtl": "^2.1.1"
   },
   "devDependencies": {
+    "@types/node": "^18.0.0",
     "@types/react": "^18.0.0",
     "@types/react-calendar": "^3.5.1",
     "@types/react-dom": "^18.0.0",

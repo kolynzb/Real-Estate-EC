@@ -34,7 +34,7 @@ export default function Footer() {
         }}
         mb={{ base: "20px", lg: "0px" }}>
         {" "}
-        &copy; {1900 + new Date().getYear()}
+        &copy; {1900 + new Date().getFullYear()}
         <Text as='span' fontWeight='500' ms='4px'>
           Horizon UI. All Rights Reserved. Made with love by
           <Link

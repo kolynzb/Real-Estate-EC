@@ -48,7 +48,7 @@ export default function Default(props: { [x: string]: any; id: any; label: any; 
             ms='15px'
             htmlFor={id}
             _hover={{ cursor: "pointer" }}
-            direction='column'
+            // direction='column'
             mb='0px'
             maxW={textWidth ? textWidth : "75%"}>
             <Text
@@ -69,7 +69,7 @@ export default function Default(props: { [x: string]: any; id: any; label: any; 
           <FormLabel
             htmlFor={id}
             _hover={{ cursor: "pointer" }}
-            direction='column'
+            // direction='column'
             maxW={textWidth ? textWidth : "75%"}>
             <Text
               color={textColorPrimary}
