@@ -18,15 +18,16 @@ import {
   useDisclosure,
   SimpleGrid,
 } from "@chakra-ui/react";
-import IconBox from "components/icons/IconBox";
-import { SidebarResponsive } from "components/sidebar/Sidebar";
+import IconBox from "../../components/icons/IconBox";
+import { SidebarResponsive } from "../../components/sidebar/Sidebar";
 import PropTypes from "prop-types";
 import React from "react";
 import { AiFillStar } from "react-icons/ai";
 import { GoChevronDown, GoChevronRight } from "react-icons/go";
 import { NavLink } from "react-router-dom";
-import { SidebarContext } from "contexts/SidebarContext";
-import routes from "routes.js";
+import { SidebarContext } from "../../contexts/SidebarContext";
+import routes from "../../routes";
+import { RocketIcon } from "../icons/Icons";
 
 export default function AuthNavbar(props: any) {
   const { logo, logoText, secondary, sidebarWidth, ...rest } = props;
@@ -60,7 +61,9 @@ export default function AuthNavbar(props: any) {
   let authObject = {};
   routes.map((route) => {
     if (route.items) {
-      authObject = route.items.find((link) => link.name === "Authentication");
+      authObject = route.items.find(
+        (link: any) => link.name === "Authentication"
+      );
     }
   });
 
@@ -68,23 +71,25 @@ export default function AuthNavbar(props: any) {
   routes.map((route) => {
     if (route.items) {
       applicationsObject = route.items.find(
-        (link) => link.name === "Applications"
+        (link: any) => link.name === "Applications"
       );
     }
   });
 
   let ecommerceObject = {};
-  routes.map((route:any) => {
+  routes.map((route: any) => {
     if (route.items) {
-      ecommerceObject = route.items.find((link:any) => link.name === "Ecommerce");
+      ecommerceObject = route.items.find(
+        (link: any) => link.name === "Ecommerce"
+      );
     }
   });
 
   let extraArr: never[] = [];
-  routes.map((route:any) => {
-    route.items.map((item:any) => {
+  routes.map((route: any) => {
+    route.items.map((item: any) => {
       if (item.items && item.name === "Pages") {
-        extraArr = item.items.filter((link:any) => !link.collapse);
+        extraArr = item.items.filter((link: any) => !link.collapse);
       }
     });
   });
@@ -152,7 +157,7 @@ export default function AuthNavbar(props: any) {
   }
 
   const createPagesLinks = (routes: any) => {
-    return routes.map((link:any) => {
+    return routes.map((link: any) => {
       if (
         link.name === "Applications" ||
         link.name === "Ecommerce" ||
@@ -175,7 +180,7 @@ export default function AuthNavbar(props: any) {
               cursor="default"
             >
               <IconBox bg="blue.500" color="white" h="30px" w="30px">
-                {/* <RocketIcon color='inherit' /> */}
+                <RocketIcon color="inherit" />
               </IconBox>
               <Text fontWeight="bold" fontSize="sm" color={textColor}>
                 Extra
@@ -228,8 +233,8 @@ export default function AuthNavbar(props: any) {
     });
   };
 
-  const createExtraLinks = (routes:any) => {
-    return routes.map((link:any) => {
+  const createExtraLinks = (routes: any) => {
+    return routes.map((link: any) => {
       return (
         <NavLink to={link.layout + link.path}>
           <MenuItem
@@ -247,8 +252,8 @@ export default function AuthNavbar(props: any) {
     });
   };
 
-  const createAuthLinks = (routes:any) => {
-    return routes.map((link:any) => {
+  const createAuthLinks = (routes: any) => {
+    return routes.map((link: any) => {
       if (link.authIcon && link.collapse === true) {
         return (
           <Stack direction="column" my="auto">
@@ -287,8 +292,8 @@ export default function AuthNavbar(props: any) {
     });
   };
 
-  const createApplicationLinks = (routes:any) => {
-    return routes.map((link:any) => {
+  const createApplicationLinks = (routes: any) => {
+    return routes.map((link: any) => {
       return (
         <NavLink to={link.layout + link.path}>
           <Stack direction="row" spacing="12px" align="center" cursor="pointer">
@@ -304,8 +309,8 @@ export default function AuthNavbar(props: any) {
     });
   };
 
-  const createEcommerceLinks = (routes:any) => {
-    return routes.map((link:any) => {
+  const createEcommerceLinks = (routes: any) => {
+    return routes.map((link: any) => {
       if (link.authIcon) {
         return (
           <Stack direction="column">

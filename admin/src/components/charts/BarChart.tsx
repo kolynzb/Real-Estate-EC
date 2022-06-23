@@ -1,8 +1,16 @@
 import React, { Component } from "react";
 import Chart from "react-apexcharts";
 
-class ColumnChart extends Component {
-  constructor(props:any) {
+type Props = {
+  chartData: [];
+  chartOptions: {};
+};
+type State = {
+  chartData: [];
+  chartOptions: {};
+};
+class ColumnChart extends Component<Props, State> {
+  constructor(props: any) {
     super(props);
     this.state = {
       chartData: [],
@@ -22,9 +30,9 @@ class ColumnChart extends Component {
       <Chart
         options={this.state.chartOptions}
         series={this.state.chartData}
-        type='bar'
-        width='100%'
-        height='100%'
+        type="bar"
+        width="100%"
+        height="100%"
       />
     );
   }

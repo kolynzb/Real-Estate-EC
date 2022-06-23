@@ -4,7 +4,6 @@ import AuthLayout from "./layouts/auth";
 import AdminLayout from "./layouts/admin";
 // import RTLLayout from "./layouts/rtl";
 
-import { CircularProgress } from "@chakra-ui/react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 function App() {
   return (

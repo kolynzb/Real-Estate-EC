@@ -1,11 +1,11 @@
 // Chakra imports
 import { Flex, Text, useColorModeValue } from "@chakra-ui/react";
-import Card from "components/card/Card.js";
+import Card from "../../../../components/card/Card.js";
 // Custom components
-import SwitchField from "components/fields/SwitchField";
-import Menu from "components/menu/MainMenu";
+import SwitchField from "../../../../components/fields/SwitchField";
+import Menu from "../../../../components/menu/MainMenu";
 
-export default function Notifications(props) {
+export default function Notifications(props:any) {
   const { ...rest } = props;
   // Chakra Color Mode
   const textColorPrimary = useColorModeValue("secondaryGray.900", "white");
@@ -27,71 +27,61 @@ export default function Notifications(props) {
         fontSize='sm'
         mb='20px'
         id='1'
-        label='Item update notifications'
-      />
+        label='Item update notifications' onChange={undefined} desc={undefined} textWidth={undefined}      />
       <SwitchField
         reversed={true}
         fontSize='sm'
         mb='20px'
         id='2'
-        label='Item comment notifications'
-      />
+        label='Item comment notifications' isChecked={undefined} onChange={undefined} desc={undefined} textWidth={undefined}      />
       <SwitchField
         reversed={true}
         fontSize='sm'
         mb='20px'
         id='3'
-        label='Buyer review notifications'
-      />
+        label='Buyer review notifications' isChecked={undefined} onChange={undefined} desc={undefined} textWidth={undefined}      />
       <SwitchField
         reversed={true}
         fontSize='sm'
         mb='20px'
         id='4'
-        label='Rating reminders notifications'
-      />
+        label='Rating reminders notifications' isChecked={undefined} onChange={undefined} desc={undefined} textWidth={undefined}      />
       <SwitchField
         reversed={true}
         fontSize='sm'
         mb='20px'
         id='5'
-        label='Meetups near you notifications'
-      />
+        label='Meetups near you notifications' isChecked={undefined} onChange={undefined} desc={undefined} textWidth={undefined}      />
       <SwitchField
         reversed={true}
         fontSize='sm'
         mb='20px'
         id='6'
-        label='Company news notifications'
-      />
+        label='Company news notifications' isChecked={undefined} onChange={undefined} desc={undefined} textWidth={undefined}      />
       <SwitchField
         reversed={true}
         fontSize='sm'
         mb='20px'
         id='7'
-        label='New launches and projects'
-      />
+        label='New launches and projects' isChecked={undefined} onChange={undefined} desc={undefined} textWidth={undefined}      />
       <SwitchField
         reversed={true}
         fontSize='sm'
         mb='20px'
         id='8'
-        label='Monthly product changes'
-      />
+        label='Monthly product changes' isChecked={undefined} onChange={undefined} desc={undefined} textWidth={undefined}      />
       <SwitchField
         reversed={true}
         fontSize='sm'
         mb='20px'
         id='9'
-        label='Subscribe to newsletter'
-      />
+        label='Subscribe to newsletter' isChecked={undefined} onChange={undefined} desc={undefined} textWidth={undefined}      />
       <SwitchField
         reversed={true}
         fontSize='sm'
         mb='20px'
         id='10'
-        label='Email me when someone follows me'
-      />
+        label='Email me when someone follows me' isChecked={undefined} onChange={undefined} desc={undefined} textWidth={undefined}      />
     </Card>
   );
 }

@@ -212,8 +212,8 @@ export default function AuthNavbar(props: any) {
       }
     });
   };
-  const createAuthLinks = (routes) => {
-    return routes.map((link, key) => {
+  const createAuthLinks = (routes: any) => {
+    return routes.map((link:any, key:any) => {
       if (link.collapse === true) {
         return (
           <Stack key={key} direction="column" my="auto" maxW="max-content">
