@@ -1,4 +1,4 @@
-interface AppRoute {
+export interface AppRoute {
   name: string;
   layout: string;
   path: string;

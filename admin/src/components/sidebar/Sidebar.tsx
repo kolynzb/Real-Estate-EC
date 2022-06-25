@@ -24,10 +24,13 @@ import PropTypes from "prop-types";
 
 // Assets
 import { IoMenuOutline } from "react-icons/io5";
+import { AppRoute } from "../../interfaces/route.interface";
 
-function Sidebar(props: any) {
-  const { routes } = props;
+type SidebarProps = {
+  routes: Array<AppRoute>;
+};
 
+function Sidebar({ routes }: SidebarProps) {
   let variantChange = "0.2s linear";
   let shadow = useColorModeValue(
     "14px 17px 40px 4px rgba(112, 144, 176, 0.08)",

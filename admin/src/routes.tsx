@@ -1,5 +1,3 @@
-import React from "react";
-
 import { Icon } from "@chakra-ui/react";
 import {
   MdBarChart,
@@ -18,6 +16,7 @@ import RTL from "./pages/admin/rtl";
 
 // Auth Imports
 import SignInCentered from "./pages/auth/SignIn";
+import { AppRoute } from "./interfaces/route.interface";
 
 const routes: Array<AppRoute> = [
   {

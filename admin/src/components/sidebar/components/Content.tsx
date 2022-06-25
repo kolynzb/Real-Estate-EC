@@ -5,9 +5,10 @@ import Brand from "../../../components/sidebar/components/Brand";
 import Links from "../../../components/sidebar/components/Links";
 
 // FUNCTIONS
-
-function SidebarContent(props: any) {
-  const { routes } = props;
+type SidebarContentProps = {
+  
+}
+function SidebarContent({ routes }: any) {
   // SIDEBAR
   return (
     <Flex direction="column" height="100%" pt="25px" borderRadius="30px">
