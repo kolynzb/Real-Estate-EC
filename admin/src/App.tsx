@@ -16,7 +16,7 @@ function App() {
         <Route path={`/auth/*`} element={<AuthLayout />} />
         <Route path={`/admin/*`} element={<AdminLayout />} />
         <Route path={`/rtl/*`} element={<RTLLayout />} />
-        <Route path="/" element={<Navigate replace to="/admin" />} />
+        <Route path="/" element={<Navigate replace to="/auth" />} />
       </Routes>
     </Router>
   );

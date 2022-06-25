@@ -66,8 +66,8 @@ export default function Auth() {
               <Routes>
                 {getRoutes(routes)}
                 <Route
-                  path="/auth"
-                  element={<Navigate to="/auth/sign-in/default" replace />}
+                  path="/"
+                  element={<Navigate replace to="/auth/sign-in" />}
                 />
               </Routes>
               <Outlet />
