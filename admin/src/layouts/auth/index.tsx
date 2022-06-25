@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Navigate, Route, Routes } from "react-router-dom";
+import { Navigate, Outlet, Route, Routes } from "react-router-dom";
 import routes from "../../routes";
 
 // Chakra imports
@@ -21,7 +21,8 @@ export default function Auth() {
       if (prop.layout === "/auth") {
         return (
           <Route
-            path={prop.layout + prop.path}
+            path={prop.path}
+            // path={prop.layout + prop.path}
             element={prop.component}
             key={key}
           />
@@ -68,6 +69,7 @@ export default function Auth() {
                   element={<Navigate to="/auth/sign-in/default" replace />}
                 />
               </Routes>
+              <Outlet />
             </Box>
           ) : null}
         </Box>

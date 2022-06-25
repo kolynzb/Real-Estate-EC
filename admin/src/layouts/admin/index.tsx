@@ -93,10 +93,10 @@ export default function Dashboard(props: any) {
   const getRoutes = (routes: any) => {
     return routes.map((prop: any, key: React.Key) => {
       if (prop.layout === "/admin") {
-        console.log(prop.layout + prop.path);
         return (
           <Route
-            path={prop.layout + prop.path}
+            path={prop.path}
+            // path={prop.layout + prop.path}
             element={prop.component}
             key={key}
           />
@@ -168,6 +168,7 @@ export default function Dashboard(props: any) {
                 />
               </Routes>
 
+              <Outlet />
               {/* TODO:fix routes */}
             </Box>
           ) : null}

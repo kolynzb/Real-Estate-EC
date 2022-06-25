@@ -7,7 +7,7 @@ import Sidebar from "../../components/sidebar/Sidebar.js";
 import { RtlProvider } from "../../components/rtlProvider/RtlProvider.js";
 import { SidebarContext } from "../../contexts/SidebarContext";
 import React, { useState } from "react";
-import { Navigate, Route, Routes } from "react-router-dom";
+import { Navigate, Outlet, Route, Routes } from "react-router-dom";
 import routes from "../../routes";
 
 // Custom Chakra theme
@@ -94,7 +94,8 @@ export default function Dashboard(props: any) {
       if (prop.layout === "/rtl") {
         return (
           <Route
-            path={prop.layout + prop.path}
+            path={prop.path}
+            // path={prop.layout + prop.path}
             element={prop.component}
             key={key}
           />
@@ -164,6 +165,7 @@ export default function Dashboard(props: any) {
                   element={<Navigate to="/rtl/rtl-default" replace />}
                 />
               </Routes>
+              <Outlet />
             </Box>
           ) : null}
           <Box>
