@@ -47,14 +47,14 @@ const routes = [
     layout: "/admin",
     icon: <Icon as={MdBarChart} width="20px" height="20px" color="inherit" />,
     path: "/data-tables",
-    component: DataTables,
+    component: <DataTables />,
   },
   {
     name: "Profile",
     layout: "/admin",
     path: "/profile",
     icon: <Icon as={MdPerson} width="20px" height="20px" color="inherit" />,
-    component: Profile,
+    component: <Profile />,
   },
   {
     name: "Sign In",

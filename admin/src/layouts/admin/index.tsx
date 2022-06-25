@@ -169,7 +169,6 @@ export default function Dashboard(props: any) {
               </Routes>
 
               <Outlet />
-              {/* TODO:fix routes */}
             </Box>
           ) : null}
           <Box>
