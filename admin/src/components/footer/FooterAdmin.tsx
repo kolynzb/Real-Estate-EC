@@ -10,13 +10,14 @@ import {
   useColorMode,
   useColorModeValue,
 } from "@chakra-ui/react";
+import About from "../../custom/About";
 
 export default function Footer() {
   const textColor = useColorModeValue("gray.400", "white");
   const { toggleColorMode } = useColorMode();
   return (
     <Flex
-      zIndex='3'
+      zIndex="3"
       flexDirection={{
         base: "column",
         xl: "row",
@@ -25,40 +26,45 @@ export default function Footer() {
         base: "center",
         xl: "start",
       }}
-      justifyContent='space-between'
+      justifyContent="space-between"
       px={{ base: "30px", md: "50px" }}
-      pb='30px'>
+      pb="30px"
+    >
       <Text
         color={textColor}
         textAlign={{
           base: "center",
           xl: "start",
         }}
-        mb={{ base: "20px", xl: "0px" }}>
+        mb={{ base: "20px", xl: "0px" }}
+      >
         {" "}
-        &copy; {1900 + new Date().getFullYear()}
-        <Text as='span' fontWeight='500' ms='4px'>
-          Horizon UI. All Rights Reserved. Made with love by
+        &copy; {new Date().getFullYear()}
+        <Text as="span" fontWeight="500" ms="4px">
+          {About.logoText}. All Rights Reserved. Made by
           <Link
-            mx='3px'
+            mx="3px"
             color={textColor}
-            href='https://www.simmmple.com'
-            target='_blank'
-            fontWeight='700'>
-            Simmmple!
+            href="https://www.simmmple.com"
+            target="_blank"
+            fontWeight="700"
+          >
+            Kolynzb !
           </Link>
         </Text>
       </Text>
-      <List display='flex'>
+      <List display="flex">
         <ListItem
           me={{
             base: "20px",
             md: "44px",
-          }}>
+          }}
+        >
           <Link
-            fontWeight='500'
+            fontWeight="500"
             color={textColor}
-            href='mailto:hello@simmmple.com'>
+            href="mailto:hello@simmmple.com"
+          >
             Support
           </Link>
         </ListItem>
@@ -66,11 +72,13 @@ export default function Footer() {
           me={{
             base: "20px",
             md: "44px",
-          }}>
+          }}
+        >
           <Link
-            fontWeight='500'
+            fontWeight="500"
             color={textColor}
-            href='https://www.simmmple.com/licenses'>
+            href="https://www.simmmple.com/licenses"
+          >
             License
           </Link>
         </ListItem>
@@ -78,19 +86,22 @@ export default function Footer() {
           me={{
             base: "20px",
             md: "44px",
-          }}>
+          }}
+        >
           <Link
-            fontWeight='500'
+            fontWeight="500"
             color={textColor}
-            href='https://simmmple.com/terms-of-service'>
+            href="https://simmmple.com/terms-of-service"
+          >
             Terms of Use
           </Link>
         </ListItem>
         <ListItem>
           <Link
-            fontWeight='500'
+            fontWeight="500"
             color={textColor}
-            href='https://www.blog.simmmple.com/'>
+            href="https://www.blog.simmmple.com/"
+          >
             Blog
           </Link>
         </ListItem>
