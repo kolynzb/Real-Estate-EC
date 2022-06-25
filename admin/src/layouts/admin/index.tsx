@@ -13,8 +13,8 @@ import routes from "../../routes";
 export default function Dashboard(props: any) {
   const { ...rest } = props;
   // states and functions
-  const [fixed] = useState(false);
-  const [toggleSidebar, setToggleSidebar] = useState(false);
+  const [fixed] = useState<Boolean>(false);
+  const [toggleSidebar, setToggleSidebar] = useState<Boolean>(false);
   // functions for changing the states from components
   const getRoute = () => {
     return window.location.pathname !== "/admin/full-screen-maps";

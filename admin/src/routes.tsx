@@ -19,7 +19,7 @@ import RTL from "./pages/admin/rtl";
 // Auth Imports
 import SignInCentered from "./pages/auth/SignIn";
 
-const routes = [
+const routes: Array<AppRoute> = [
   {
     name: "Main Dashboard",
     layout: "/admin",
