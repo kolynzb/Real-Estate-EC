@@ -3,12 +3,13 @@ import { Box, Flex, Stack } from "@chakra-ui/react";
 //   Custom components
 import Brand from "../../../components/sidebar/components/Brand";
 import Links from "../../../components/sidebar/components/Links";
+import { AppRoute } from "../../../interfaces/route.interface";
 
 // FUNCTIONS
 type SidebarContentProps = {
-  
-}
-function SidebarContent({ routes }: any) {
+  routes: Array<AppRoute>;
+};
+function SidebarContent({ routes }: SidebarContentProps) {
   // SIDEBAR
   return (
     <Flex direction="column" height="100%" pt="25px" borderRadius="30px">
