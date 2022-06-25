@@ -7,7 +7,7 @@ import React from "react";
 import {
   barChartDataUserActivity,
   barChartOptionsUserActivity,
-} from "variables/charts";
+} from "../../../../variables/charts";
 
 export default function UserActivity(props: any) {
   const { ...rest } = props;
