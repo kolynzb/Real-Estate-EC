@@ -31,7 +31,7 @@ export default function ColumnsTable(props:any) {
   const columns = useMemo(() => columnsData, [columnsData]);
   const data = useMemo(() => tableData, [tableData]);
 
-  const tableInstance = useTable(
+  const tableInstance:any = useTable(
     {
       columns,
       data,

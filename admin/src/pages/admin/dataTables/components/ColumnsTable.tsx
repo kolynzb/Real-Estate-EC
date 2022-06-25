@@ -26,7 +26,7 @@ export default function ColumnsTable(props: any) {
   const columns = useMemo(() => columnsData, [columnsData]);
   const data = useMemo(() => tableData, [tableData]);
 
-  const tableInstance = useTable(
+  const tableInstance: any = useTable(
     {
       columns,
       data,
@@ -68,9 +68,9 @@ export default function ColumnsTable(props: any) {
       </Flex>
       <Table {...getTableProps()} variant="simple" color="gray.500" mb="24px">
         <Thead>
-          {headerGroups.map((headerGroup:any, index:any) => (
+          {headerGroups.map((headerGroup: any, index: any) => (
             <Tr {...headerGroup.getHeaderGroupProps()} key={index}>
-              {headerGroup.headers.map((column:any, index:any) => (
+              {headerGroup.headers.map((column: any, index: any) => (
                 <Th
                   {...column.getHeaderProps(column.getSortByToggleProps())}
                   pe="10px"
@@ -91,12 +91,12 @@ export default function ColumnsTable(props: any) {
           ))}
         </Thead>
         <Tbody {...getTableBodyProps()}>
-          {page.map((row:any, index:any) => {
+          {page.map((row: any, index: any) => {
             prepareRow(row);
             return (
               <Tr {...row.getRowProps()} key={index}>
-                {row.cells.map((cell:any, index:any) => {
-                  let data:any = "";
+                {row.cells.map((cell: any, index: any) => {
+                  let data: any = "";
                   if (cell.column.Header === "NAME") {
                     data = (
                       <Flex align="center">

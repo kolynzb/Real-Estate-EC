@@ -33,7 +33,7 @@ export default function GeneralInformation(props: any) {
         a hand. We get our heart broken by people we love, even that we give
         them all...
       </Text>
-      <SimpleGrid columns="2" gap="20px">
+      <SimpleGrid column="2" gap="20px">
         <Information
           boxShadow={cardShadow}
           title="Education"
