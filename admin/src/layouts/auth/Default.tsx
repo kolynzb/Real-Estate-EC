@@ -67,6 +67,7 @@ function AuthIllustration(props: {
           position="absolute"
           right="0px"
         >
+          {/* TODO: Change this background */}
           <Flex
             bg={`url(${illustrationBackground})`}
             justify="center"

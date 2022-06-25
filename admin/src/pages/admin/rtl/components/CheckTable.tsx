@@ -27,7 +27,7 @@ export default function CheckTable(props: any) {
   const columns = useMemo(() => columnsData, [columnsData]);
   const data = useMemo(() => tableData, [tableData]);
 
-  const tableInstance = useTable(
+  const tableInstance: any = useTable(
     {
       columns,
       data,
@@ -69,7 +69,7 @@ export default function CheckTable(props: any) {
       </Flex>
       <Table {...getTableProps()} variant="simple" color="gray.500" mb="24px">
         <Thead>
-          {headerGroups.map((headerGroup, index) => (
+          {headerGroups.map((headerGroup: any, index: any) => (
             <Tr {...headerGroup.getHeaderGroupProps()} key={index}>
               {headerGroup.headers.map((column: any, index: any) => (
                 <Th
