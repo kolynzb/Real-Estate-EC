@@ -109,7 +109,6 @@ export default function Dashboard(props: any) {
         return getRoutes(prop.items);
       } else {
         return null;
-        // return <>hello</>;
       }
     });
   };
@@ -142,7 +141,7 @@ export default function Dashboard(props: any) {
             <Box>
               <Navbar
                 onOpen={onOpen}
-                logoText={"Horizon UI Dashboard PRO"}
+                logoText={"Real Estate Dashboard "}
                 brandText={getActiveRoute(routes)}
                 secondary={getActiveNavbar(routes)}
                 message={getActiveNavbarText(routes)}
@@ -169,7 +168,7 @@ export default function Dashboard(props: any) {
                 />
               </Routes>
 
-              <Outlet />
+              {/* TODO:fix routes */}
             </Box>
           ) : null}
           <Box>

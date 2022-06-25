@@ -29,7 +29,7 @@ export default function AdminNavbar(props: any) {
   // Here are all the props that may change depending on navbar's type or state.(secondary, variant, scrolled)
   let mainText = useColorModeValue("navy.700", "white");
   let secondaryText = useColorModeValue("gray.700", "white");
-  let navbarPosition = "fixed";
+  let navbarPosition: any = "fixed";
   let navbarFilter = "none";
   let navbarBackdrop = "blur(20px)";
   let navbarShadow = "none";
@@ -51,8 +51,7 @@ export default function AdminNavbar(props: any) {
 
   return (
     <Box
-      bgPosition={navbarPosition}
-      // position={navbarPosition}
+      position={navbarPosition}
       boxShadow={navbarShadow}
       bg={navbarBg}
       borderColor={navbarBorder}

@@ -11,12 +11,12 @@ import { SidebarContext } from "../../contexts/SidebarContext";
 // Custom Chakra theme
 export default function Auth() {
   // states and functions
-  const [toggleSidebar, setToggleSidebar] = useState(false);
+  const [toggleSidebar, setToggleSidebar] = useState<Boolean>(false);
   // functions for changing the states from components
-  const getRoute = () => {
+  const getRoute = (): Boolean => {
     return window.location.pathname !== "/auth/full-screen-maps";
   };
-  const getRoutes = (routes: any) => {
+  const getRoutes = (routes: any): React.ReactElement | null => {
     return routes.map((prop: any, key: React.Key) => {
       if (prop.layout === "/auth") {
         return (
