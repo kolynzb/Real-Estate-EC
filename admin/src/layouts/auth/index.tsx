@@ -7,6 +7,7 @@ import { Box, useColorModeValue } from "@chakra-ui/react";
 
 // Layout components
 import { SidebarContext } from "../../contexts/SidebarContext";
+import { AppRoute } from "../../interfaces/route.interface";
 
 // Custom Chakra theme
 export default function Auth() {
@@ -16,8 +17,8 @@ export default function Auth() {
   const getRoute = (): Boolean => {
     return window.location.pathname !== "/auth/full-screen-maps";
   };
-  const getRoutes = (routes: any): React.ReactElement | null => {
-    return routes.map((prop: any, key: React.Key) => {
+  const getRoutes = (routes: Array<AppRoute>): any => {
+    return routes.map((prop: AppRoute | any, key: React.Key) => {
       if (prop.layout === "/auth") {
         return (
           <Route
