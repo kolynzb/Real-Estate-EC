@@ -11,6 +11,7 @@ psycopg2 = "*"
 djangorestframework-simplejwt = "*"
 djoser = "*"
 django-environ = "*"
+django-cors-headers = "*"
 
 [dev-packages]
 
