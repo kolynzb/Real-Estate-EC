@@ -1,3 +1,4 @@
+from datetime import timedelta
 from pathlib import Path
 import os
 import environ 
@@ -141,6 +142,12 @@ REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES':['rest_framework_simplejwt.authentication.JWTAuthentication'],
     'DEFAULT_PAGINATION_CLASSES':'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE':3
+}
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETME':timedelta(minutes=30),
+    'REFRESH_TOKEN_LIFETME':timedelta(days=1),
+    'AUTH_HEADER_TYPES':('Bearer', ),
+    'AUTH_TOKEN_CLASSES':('rest_framework_simplejwt.tokens.AccessToken')
 }
 
 CORS_ORIGIN_ALLOW_ALL = True
